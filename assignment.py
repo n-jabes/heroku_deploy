@@ -9,7 +9,7 @@ with open('transactions.txt') as f:
         message += line + "\n"  
 
 formData = {"message": message, "SerialNumber": 45678}
-post = requests.post("https://safe-house-backend.herokuapp.com/message/create", data=formData)
+post = requests.post("https://my-first-heroku-application11.herokuapp.com/create", data=formData)
 
 if post.text :
     print("Data uploaded!")
@@ -18,7 +18,7 @@ if post.text :
 # ser.write(b'Data Uploaded')
 
 
-# r = requests.get("https://safe-house-backend.herokuapp.com/message")
+# r = requests.get("https://my-first-heroku-application11.herokuapp.com/")
 # print(r.url)
 # print(r.status_code)
 # print(r.content)
