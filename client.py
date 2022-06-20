@@ -1,30 +1,23 @@
-import time
-import serial
 import requests
-import os
+import serial
 
-while True: 
-    if os.path.exists("transactions.txt") :
-        file_data = ''
-        transactions_file = open('transactions.txt')
-        while True:
-            line = transactions_file.readline()
-            if not line: 
-                break
-            file_data += line + "\n"  
+file = open("transactions.txt","r+")
+ 
+array = file.read()
+  
+data = {'array':array}
 
-        formData = {"data": file_data}
-        response = requests.post("https://my-first-heroku-application11.herokuapp.com/upload_data", data=formData)
+# print(data)
 
-        if response.status_code == 200 :
-            print("Data uploaded!")
+# ser =serial.Serial ('COM4',9600)
+# ser.write('serial Data uploaded')
+  
+res = requests.post('https://my-first-heroku-application11.herokuapp.com/upload_data', data) 
 
-        os.remove("transactions.txt");
-        ser = serial.Serial('COM3', 9600)
-        ser.write(b'Data Uploaded')
+returned_data = res.json() 
+  
+print(returned_data)
+response = returned_data['response'] 
+print("Reply from Node.js:", response)
+file.close();
 
-       
-        time.sleep(20)
-    
-    else :
-        time.sleep(20)
