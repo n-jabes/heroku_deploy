@@ -1,5 +1,5 @@
 {
-  "name": "emdedded_uploading_data_toweb",
+  "name": "client",
   "version": "1.0.0",
   "description": "Upload data using python program to a nodejs server ",
   "main": "server.js",
@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
     "express": "^4.18.1"
   }
 }
