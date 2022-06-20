@@ -12,7 +12,7 @@ data = {'array':array}
 # ser =serial.Serial ('COM4',9600)
 # ser.write('serial Data uploaded')
   
-res = requests.post('https:my-first-heroku-application11/upload_data', data) 
+res = requests.post('https://my-first-heroku-application11.herokuapp.com/upload_data', data) 
 
 returned_data = res.json() 
   
