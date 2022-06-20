@@ -1,4 +1,5 @@
 import requests
+import serial
 
 file = open("transactions.txt","r+")
  
@@ -8,10 +9,10 @@ data = {'array':array}
 
 # print(data)
 
-ser =serial.Serial ('COM4',9600)
-ser.write('serial Data uploaded')
+# ser =serial.Serial ('COM4',9600)
+# ser.write('serial Data uploaded')
   
-res = requests.post('http://127.0.0.1:5000/upload_data', data) 
+res = requests.post('https:my-first-heroku-application11/upload_data', data) 
 
 returned_data = res.json() 
   
